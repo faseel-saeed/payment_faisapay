@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="payment_provider_form" model="ir.ui.view">
+        <field name="name">Faisapay Provider Form</field>
+        <field name="model">payment.provider</field>
+        <field name="inherit_id" ref="payment.payment_provider_form"/>
+        <field name="arch" type="xml">
+            <group name="provider_credentials" position='inside'>
+                <group name="faisapay_credentials"
+                       attrs="{'invisible': [('code', '!=', 'faisapay')]}">
+                    <field name="faisapay_merchant_id"
+                           string="Merchant Id"
+                           attrs="{'required': [('code', '=', 'faisapay'), ('state', '!=', 'disabled')]}"/>
+                    <field name="faisapay_acquirer_id"
+                           string="Acquirer Id"
+                           attrs="{'required': [('code', '=', 'faisapay'), ('state', '!=', 'disabled')]}"/>
+                    <field name="faisapay_passcode"
+                           string="Passcode"
+                           attrs="{'required': [('code', '=', 'faisapay'), ('state', '!=', 'disabled')]}"
+                           password="True"/>
+                </group>
+            </group>
+        </field>
+    </record>
+
+</odoo>

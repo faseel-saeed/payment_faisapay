@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="redirect_form">
+        <form t-att-action="api_url" method="post">
+            <input type="hidden" name="version" t-att-value="version"/>
+            <input type="hidden" name="merID" t-att-value="merID"/>
+            <input type="hidden" name="acqID" t-att-value="acqID"/>
+            <input type="hidden" name="merRespURL" t-att-value="merRespURL"/>
+            <input type="hidden" name="purchaseCurrency" t-att-value="purchaseCurrency"/>
+            <input type="hidden" name="purchaseCurrencyExponent" t-att-value="purchaseCurrencyExponent"/>
+            
+            <input type="hidden" name="orderID" t-att-value="orderID"/>
+            <input type="hidden" name="signatureMethod" t-att-value="signatureMethod"/>
+            <input type="hidden" name="purchaseAmt" t-att-value="purchaseAmt"/>
+            <input type="hidden" name="signature" t-att-value="signature"/>
+            <input type="hidden" name="cancel_url" t-att-value="merRespURL"/>
+        </form>
+    </template>
+
+</odoo>
+
